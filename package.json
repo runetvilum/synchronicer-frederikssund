@@ -1,0 +1,15 @@
+{
+  "name": "synchronicer-frederikssund",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nano": "^6.1.5",
+    "request": "^2.64.0"
+  }
+}

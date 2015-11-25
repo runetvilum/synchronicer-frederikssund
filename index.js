@@ -73,6 +73,15 @@ var sendXml = function (doc, body) {
   var dst_long = doc.geometry.coordinates[0].toString().replace('.', ',');
   var obs_em = doc.properties.Email || '';
   var besked = doc.properties.Kommentar || '';
+  var attachments = ['', '', '', '', '', '', '', '', ''];
+  if (doc.hasOwnProperty('_attachments')) {
+    var n = 0;
+    for (var att in doc._attachments) {
+      if (att.substring(0, 3) !== 'tn_') {
+        attachments[n] = 'https://geo.os2geo.dk/couchdb/db-9e9b674ee499b4ff06bfe3cbef2df726/' + doc._id + '/' + att;
+      }
+    }
+  }
   var xml = '<?xml version="1.0" encoding="utf-8" ?>';
   xml += '<import owner="FS">';
   xml += '<tour tour_reference="pool" st_date="' + st_date + '" st_time="' + st_time + '" end_date="' + st_date + '" end_time="' + st_time + '">';
@@ -110,15 +119,15 @@ var sendXml = function (doc, body) {
   xml += '<item_value item_type="BESKED_CLI" value= "" />';
   xml += '<item_value item_type="BESKED" value= "' + besked + '" />';
   xml += '<item_value item_type="BESKED_SRV" value= "" />';
-  xml += '<item_value item_type="I1" value= "" />';
-  xml += '<item_value item_type="I2" value= "" />';
-  xml += '<item_value item_type="I3" value= "" />';
-  xml += '<item_value item_type="I4" value= "" />';
-  xml += '<item_value item_type="I5" value= "" />';
-  xml += '<item_value item_type="I6" value= "" />';
-  xml += '<item_value item_type="I7" value= "" />';
-  xml += '<item_value item_type="I8" value= "" />';
-  xml += '<item_value item_type="I9" value= "" />';
+  xml += '<item_value item_type="I1" value= "' + attachments[0] + '" />';
+  xml += '<item_value item_type="I2" value= "' + attachments[1] + '" />';
+  xml += '<item_value item_type="I3" value= "' + attachments[2] + '" />';
+  xml += '<item_value item_type="I4" value= "' + attachments[3] + '" />';
+  xml += '<item_value item_type="I5" value= "' + attachments[4] + '" />';
+  xml += '<item_value item_type="I6" value= "' + attachments[5] + '" />';
+  xml += '<item_value item_type="I7" value= "' + attachments[6] + '" />';
+  xml += '<item_value item_type="I8" value= "' + attachments[7] + '" />';
+  xml += '<item_value item_type="I9" value= "' + attachments[8] + '" />';
   xml += '</registration>';
   xml += '</tour>';
   xml += '</import>';

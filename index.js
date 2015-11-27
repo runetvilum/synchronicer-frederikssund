@@ -147,13 +147,13 @@ var sendXml = function (doc, body) {
   };
 
   var req = http.request(postRequest, function (res) {
-    //console.log(res.statusCode);
+    console.log(res.statusCode);
     var buffer = "";
     res.on("data", function (data) {
       buffer = buffer + data;
     });
     res.on("end", function (data) {
-      //console.log(buffer);
+      console.log(buffer);
     });
 
   });

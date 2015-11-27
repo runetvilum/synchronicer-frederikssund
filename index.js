@@ -1,6 +1,7 @@
 var config = require('./config.json');
 var request = require('request');
 var http = require('http');
+var moment = require('moment');
 var nano = require('nano')({
   "url": config.url,
   "parseUrl": false
@@ -59,12 +60,14 @@ var sendXml = function (doc, body) {
       break;
   }
   var dato = new Date(doc.properties.Dato);
+  var mDate = moment(dato);
   var id = dato.getTime();
-  var st_date = dato.toLocaleDateString();
-  var st_time = dato.toLocaleTimeString();
+  var st_date = mDate.format('YYYY-MM-DD');
+  var st_time = mDate.format('HH:MM');
   dato.setTime(dato.getTime() + 14 * 24 * 60 * 60 * 1000);
-  var late_date = dato.toLocaleDateString();
-  var late_time = dato.toLocaleTimeString();
+  mDate = moment(dato);
+  var late_date = mDate.format('YYYY-MM-DD');
+  var late_time = mDate.format('HH:MM');
   var dst_adress = res.vejstykke.navn;
   var dst_adress2 = res.husnr;
   var dst_zipcode = res.postnummer.nr;
@@ -78,7 +81,7 @@ var sendXml = function (doc, body) {
     var n = 0;
     for (var att in doc._attachments) {
       if (att.substring(0, 3) !== 'tn_') {
-        attachments[n] = 'https://geo.os2geo.dk/couchdb/db-9e9b674ee499b4ff06bfe3cbef2df726/' + doc._id + '/' + att;
+        attachments[n] = '<img src=https://geo.os2geo.dk/couchdb/db-9e9b674ee499b4ff06bfe3cbef2df726/' + doc._id + '/' + att + ' />';
       }
     }
   }
@@ -131,6 +134,7 @@ var sendXml = function (doc, body) {
   xml += '</registration>';
   xml += '</tour>';
   xml += '</import>';
+  
   var postRequest = {
     host: config.host,
     path: "/XMLIMPORT/cgirelays.exe",

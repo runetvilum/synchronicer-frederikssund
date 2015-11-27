@@ -81,7 +81,7 @@ var sendXml = function (doc, body) {
     var n = 0;
     for (var att in doc._attachments) {
       if (att.substring(0, 3) !== 'tn_') {
-        attachments[n] = '<img src=https://geo.os2geo.dk/couchdb/db-9e9b674ee499b4ff06bfe3cbef2df726/' + doc._id + '/' + att + ' />';
+        attachments[n] = '&lt;img src=https://geo.os2geo.dk/couchdb/db-9e9b674ee499b4ff06bfe3cbef2df726/' + doc._id + '/' + att + '&gt;';
       }
     }
   }

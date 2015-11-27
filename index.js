@@ -63,11 +63,11 @@ var sendXml = function (doc, body) {
   var mDate = moment(dato);
   var id = dato.getTime();
   var st_date = mDate.format('YYYY-MM-DD');
-  var st_time = mDate.format('HH:mm:ss');
+  var st_time = mDate.format('HH:mm');
   dato.setTime(dato.getTime() + 14 * 24 * 60 * 60 * 1000);
   mDate = moment(dato);
   var late_date = mDate.format('YYYY-MM-DD');
-  var late_time = mDate.format('HH:mm:ss');
+  var late_time = mDate.format('HH:mm');
   var dst_adress = res.vejstykke.navn;
   var dst_adress2 = res.husnr;
   var dst_zipcode = res.postnummer.nr;

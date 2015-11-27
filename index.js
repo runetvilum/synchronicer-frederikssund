@@ -134,7 +134,7 @@ var sendXml = function (doc, body) {
   xml += '</registration>';
   xml += '</tour>';
   xml += '</import>';
-  
+  console.log(xml);
   var postRequest = {
     host: config.host,
     path: "/XMLIMPORT/cgirelays.exe",

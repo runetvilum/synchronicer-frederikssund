@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<!--ORegXmlS1-->
+<import owner="FS">
+  <tour tour_state="" compl_code="" tour_reference="" st_date=" " st_time="00:00:00" end_date="" end_time="00:00:00" rst_date="" rst_time="00:00:00" rend_date="" rend_time="00:00:00">
+    <tour_type></tour_type>
+    <tour_provider></tour_provider>
+    <tour_contact></tour_contact>
+    <employee1></employee1>
+    <employee2></employee2>
+    <vehicle></vehicle>
+	<group></group>
+    <registration reg_status="3" compl_status="2" create_source="S" reg_reference="1448614140005" early_date="2015-11-30" early_time="10:07:00" late_date="2015-12-08" late_time="10:07:00" arr_date="2015-11-30" arr_time="10:08:08" dep_date="2015-11-30" dep_time="10:08:08" sel_date="" sel_time="">
+      <reg_type>VEJ_G</reg_type>
+      <reg_provider></reg_provider>
+      <reg_contact></reg_contact>
+      <destination>06F6333F8798</destination>
+      <dst_name></dst_name> 
+      <dst_adress>Asg�rd</dst_adress> 
+      <dst_adress2>1</dst_adress2> 
+      <dst_zipcode>3600</dst_zipcode> 
+      <dst_city>Frederikssund</dst_city> 
+      <dst_country></dst_country> 
+      <dst_phone></dst_phone> 
+      <vehicle></vehicle>
+<!--OReIXmlC1-->
+    <item_value item_type="LATITUDE" value=""/>
+    <item_value item_type="OBS_EM" value=""/>
+    <item_value item_type="GNMKRSL" value=""/>
+    <item_value item_type="OBS_CID" value=""/>
+    <item_value item_type="OBS_KOM" value=""/>
+    <item_value item_type="LONGITUDE" value=""/>
+    <item_value item_type="OBS_NVN" value=""/>
+    <item_value item_type="OBS_INF" value=""/>
+    <item_value item_type="OFFINF" value=""/>
+    <item_value item_type="OBS_VER" value=""/>
+    <item_value item_type="PKMNY" value=""/>
+    <item_value item_type="REKLED" value=""/>
+    <item_value item_type="BESKED_CLI" value=""/>
+    <item_value item_type="OBS_TLF" value=""/>
+    <item_value item_type="UDSKAM" value=""/>
+    <item_value item_type="UDSAMLED" value=""/>
+    <item_value item_type="CHK_DNG" value=""/>
+    <item_value item_type="BESKED" value=""/>
+    <item_value item_type="BESKED_SRV" value=""/>
+    <item_value item_type="I1" value=""/>
+    <item_value item_type="I2" value=""/>
+    <item_value item_type="I3" value=""/>
+    <item_value item_type="I4" value=""/>
+    <item_value item_type="I5" value=""/>
+    <item_value item_type="I6" value=""/>
+    <item_value item_type="I7" value=""/>
+    <item_value item_type="I8" value=""/>
+    <item_value item_type="I9" value=""/>
+    <item_value item_type="UDSLYSK" value="0"/>
+    <item_value item_type="UDSSPOL" value=""/>
+    <item_value item_type="UDSSKRM" value=""/>
+    <item_value item_type="UDSAMH" value=""/>
+    <item_value item_type="UDSAMAE" value=""/>
+    <item_value item_type="KBLFEJL" value=""/>
+    <item_value item_type="PKRTMAST" value=""/>
+    </registration>
+  </tour>
+</import>

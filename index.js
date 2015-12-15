@@ -167,7 +167,7 @@ var sendXml = function (doc, body) {
 var feed = db.follow({ since: "now", include_docs: true });
 feed.on('change', function (change) {
   var doc = change.doc;
-  if (doc && doc.properties && doc.properties.Art) {
+  if (doc && doc.properties && doc.properties.Art && doc.properties.Status && doc.properties.Status === 'Undersøges') {
     var url = 'http://dawa.aws.dk/adgangsadresser/reverse?x=' + doc.geometry.coordinates[0] + '&y=' + doc.geometry.coordinates[1];
     request(url, function (error, response, body) {
       if (!error && response.statusCode == 200) {

@@ -52,8 +52,8 @@ var sendXml = function (doc, body) {
     case "Fare for stød":
       reg_type = "VEJ_FS";
       break;
-    case "Lyssignal eller trafiklys":
-      reg_type = "VEJ_LT";
+    case "Mangler lys, mere end 3 lamper":
+      reg_type = "VEJML3";
       break;
     case "Andet":
       reg_type = "VEJ_G";

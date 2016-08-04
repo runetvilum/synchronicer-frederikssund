@@ -33,38 +33,49 @@ var sendXml = function (doc, body) {
 
   var res = JSON.parse(body);
   var reg_type = "";
-  switch (doc.properties.Art) {
-    case 'Manglende lys':
-      reg_type = "VEJ_ML";
-      break;
-    case "Beskadiget lampe":
-      reg_type = "VEJ_BL";
-      break;
-    case "Beskadiget mast":
-      reg_type = "VEJ_BM";
-      break;
-    case "Beskadiget skab":
-      reg_type = "VEJ_BS";
-      break;
-    case "Manglende træbeskæring":
-      reg_type = "VEJ_MT";
-      break;
-    case "Fare for stød":
-      reg_type = "VEJ_FS";
-      break;
-    case "Mangler lys, mere end 3 lamper":
-      reg_type = "VEJML3";
-      break;
-    case "Andet":
-      reg_type = "VEJ_G";
-      break;
-  }
+
   var dato = new Date(doc.properties.Dato);
   var mDate = moment(dato);
   var id = dato.getTime();
   var st_date = mDate.format('YYYY-MM-DD');
   var st_time = mDate.format('HH:mm');
-  dato.setTime(dato.getTime() + 14 * 24 * 60 * 60 * 1000);
+
+
+  switch (doc.properties.Art) {
+    case 'Manglende lys':
+      reg_type = "VEJ_ML";
+      dato.setTime(dato.getTime() + 14 * 24 * 60 * 60 * 1000);
+      break;
+    case "Beskadiget lampe":
+      reg_type = "VEJ_BL";
+      dato.setTime(dato.getTime() + 30 * 24 * 60 * 60 * 1000);
+      break;
+    case "Beskadiget mast":
+      reg_type = "VEJ_BM";
+      dato.setTime(dato.getTime() + 30 * 24 * 60 * 60 * 1000);
+      break;
+    case "Beskadiget skab":
+      reg_type = "VEJ_BS";
+      dato.setTime(dato.getTime() + 30 * 24 * 60 * 60 * 1000);
+      break;
+    case "Manglende træbeskæring":
+      reg_type = "VEJ_MT";
+      dato.setTime(dato.getTime() + 14 * 24 * 60 * 60 * 1000);
+      break;
+    case "Fare for stød":
+      reg_type = "VEJ_FS";
+      dato.setTime(dato.getTime() + 2 * 60 * 60 * 1000);
+      break;
+    case "Mangler lys, mere end 3 lamper":
+      reg_type = "VEJML3";
+      dato.setTime(dato.getTime() + 1 * 24 * 60 * 60 * 1000);
+      break;
+    case "Andet":
+      reg_type = "VEJ_G";
+      dato.setTime(dato.getTime() + 14 * 24 * 60 * 60 * 1000);
+      break;
+  }
+  
   mDate = moment(dato);
   var late_date = mDate.format('YYYY-MM-DD');
   var late_time = mDate.format('HH:mm');
